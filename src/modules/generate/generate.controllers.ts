@@ -10,7 +10,7 @@ export const generateShortUrl = async (req: Request, res: Response) => {
   const validate = await validateUrl(url);
 
   if (!validate)
-    return res.status(400).json({
+    return res.status(422).json({
       message: "Please enter a valid url",
       example: "https://www.example.com || https://example.com",
     });
